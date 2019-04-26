@@ -16,9 +16,26 @@ public static int[][] ticbox;
 		
 		
 		
-		//write your code here !!!
-		
-		
+		for(int  raw = 0; raw < 3; raw++) {
+			if(tic[raw][0] == 1 && tic[raw][1] == 1)
+				return 1;
+			if(tic[raw][0] == 2 && tic[raw][1] == 2 && tic[raw][2] == 2)
+				return 2;
+		}
+		for(int  col = 0; col < 3; col++) {
+			if(tic[0][col] == 1 && tic[1][col] == 1)
+				return 1;
+			if(tic[0][col] == 2 && tic[1][col] == 2 && tic[2][col] == 2)
+				return 2;
+		}
+		if(tic[0][0] == 1 && tic[1][1] == 1 && tic[2][2] == 1)
+			return 1;
+		if(tic[0][0] == 2 && tic[1][1] == 2 && tic[2][2] == 2)
+			return 2;
+		if(tic[0][2] == 1 && tic[1][1] == 1 && tic[2][0] == 1)
+			return 1;
+		if(tic[0][2] == 2 && tic[1][1] == 2 && tic[2][0] == 2)
+			return 2;	
 		
 		return 0;
 		
@@ -38,9 +55,12 @@ public static int[][] ticbox;
 		//check if the selected box is empty ie, already not marked by other player
 		//if all checks passed return true.
 		
-		
-		//Write your code here !!!
-		
+
+		if((a1 >= 0 && a1 < 3) && (a2 >= 0 && a2 < 3))
+		{
+			if(tic[a1][a2] == 0)
+				return true;
+		}
 		
 		return false;
 	}
